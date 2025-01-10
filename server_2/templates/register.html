@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+  </head>
+  <body
+    style="
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 20px;
+    "
+  >
+    <h1 style="text-align: center; color: #333">Register</h1>
+
+    <form
+      method="POST"
+      action="/register"
+      style="
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      "
+    >
+      <label for="name" style="display: block; margin-bottom: 10px; color: #555"
+        >Name:</label
+      >
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        style="
+          width: 95%;
+          padding: 10px;
+          margin-bottom: 20px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        "
+      />
+
+      <label
+        for="email"
+        style="display: block; margin-bottom: 10px; color: #555"
+        >Email:</label
+      >
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        style="
+          width: 95%;
+          padding: 10px;
+          margin-bottom: 20px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        "
+      />
+
+      <label for="age" style="display: block; margin-bottom: 10px; color: #555"
+        >Age:</label
+      >
+      <input
+        type="number"
+        id="age"
+        name="age"
+        required
+        style="
+          width: 95%;
+          padding: 10px;
+          margin-bottom: 20px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        "
+      />
+
+      <label
+        for="password"
+        style="display: block; margin-bottom: 10px; color: #555"
+        >Password:</label
+      >
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        style="
+          width: 95%;
+          padding: 10px;
+          margin-bottom: 20px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        "
+      />
+
+      <button
+        type="submit"
+        style="
+          width: 100%;
+          padding: 10px;
+          background-color: #28a745;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
+        "
+      >
+        Register
+      </button>
+    </form>
+
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %}
+    <ul
+      style="max-width: 400px; margin: 20px auto; list-style: none; padding: 0"
+    >
+      {% for category, message in messages %}
+      <li
+        style="
+          background-color: #f8d7da;
+          color: #721c24;
+          padding: 10px;
+          margin-bottom: 10px;
+          border: 1px solid #f5c6cb;
+          border-radius: 5px;
+        "
+      >
+        {{ message }}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
+
+    <div style="text-align: center; margin-top: 20px">
+      Have an account ?
+      <a href="/login" style="color: #007bff; text-decoration: none"
+        >Login Here</a
+      >
+    </div>
+  </body>
+</html>
